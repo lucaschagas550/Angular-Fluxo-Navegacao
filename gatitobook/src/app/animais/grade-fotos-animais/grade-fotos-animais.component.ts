@@ -9,7 +9,7 @@ import { Animais } from '../animais';
 export class GradeFotosAnimaisComponent implements OnInit {
 
   //! apenas dizendo ao verificador de tipos que você tem certeza de que a não é nullou undefined.
-  @Input() animais !: Animais;
+  @Input() animais!: Animais;
 
   constructor() { }
 

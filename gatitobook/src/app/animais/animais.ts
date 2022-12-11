@@ -9,4 +9,4 @@ export interface Animal {
   userId: number;
 }
 
-export type Animais = Animal[];
+export type Animais = Array<Animal>;
