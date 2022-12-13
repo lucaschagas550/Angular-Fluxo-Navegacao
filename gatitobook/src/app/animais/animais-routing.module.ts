@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ListaAnimaisComponent,
   },
   {
-    path: ':animalID',//Para deixar dinamico animais/55 colocar : e o nome da variavel(pode ser qualquer um )
+    path: ':animalID',//Para deixar dinamico animais/55 colocar : e o nome da variavel(pode ser qualquer um ) ActivatedRoute  detalhe.animal.component
     component: DetalheAnimalComponent,
   }
 ];
