@@ -4,6 +4,7 @@ import { Comentarios } from './comentarios';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ComentariosService } from './comentarios.service';
 import { switchMap, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-comentarios',
@@ -18,7 +19,8 @@ export class ComentariosComponent implements OnInit {
 
   constructor(
     private comentarioService: ComentariosService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,9 +35,8 @@ export class ComentariosComponent implements OnInit {
     this.comentarios$ = this.comentarioService.incluiComentario(this.id, comentario)
       .pipe(switchMap(() => this.comentarioService.buscaComentario(this.id)),
         tap(() => {
-          this.comentarioForm.reset();
-          alert('Salvo comentario');
+          this.router.navigate(['/animais/'])
         })
-    );
+      );
   }
 }
