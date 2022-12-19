@@ -31,12 +31,14 @@ export class ComentariosComponent implements OnInit {
   }
 
   gravar(): void {
-    const comentario = this.comentarioForm.get('comentario')?.value ?? ''
-    this.comentarios$ = this.comentarioService.incluiComentario(this.id, comentario)
-      .pipe(switchMap(() => this.comentarioService.buscaComentario(this.id)),
-        tap(() => {
-          this.router.navigate(['/animais/'])
-        })
-      );
+    const comentario = this.comentarioForm.get('comentario')?.value ?? '';
+    console.log(comentario);
+    this.comentarioService.incluiComentario(this.id, comentario)
+      .pipe(tap(() => {
+        console.log(this.id);
+        this.router.navigate([`/animais/`])
+        this.comentarioForm.reset();
+      })
+      ).subscribe();
   }
 }
