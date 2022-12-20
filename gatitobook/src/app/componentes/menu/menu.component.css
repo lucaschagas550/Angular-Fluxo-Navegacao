@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-.active-menu {
+.active-menu .menu-bar {
   left: 0;
 }
 

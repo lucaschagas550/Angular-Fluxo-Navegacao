@@ -1,10 +1,9 @@
-<div [ngClass]="{'active-menu': mostraMenu }" ]>
-  <!--se For true aparece-->
+<div [ngClass]="{'active-menu': mostraMenu }">
   <div class="menu-bar">
     <i class="fa fa-window-close" (click)="abreMenu()" (keyup.space)="abreMenu()">
     </i>
+    <ng-content></ng-content>
   </div>
-  <ng-content></ng-content>
 
   <div class="overlay" (click)="abreMenu()"></div>
 </div>
