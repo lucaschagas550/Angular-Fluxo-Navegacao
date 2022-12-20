@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'novo',
     component: NovoAnimalComponent,
-  }
+  },
 ];
 
 @NgModule({
